@@ -1,0 +1,15 @@
+{
+  "name": "namelesscoder/inline-page-editing",
+  "description": "Edit content elements directly in page module without switching views",
+  "type": "typo3-cms-extension",
+  "preferred-install": "dist",
+  "license": "GPL-3.0+",
+  "autoload": {
+    "psr-4": {
+      "NamelessCoder\\InlinePageEditing\\": "Classes/"
+    }
+  },
+  "require": {
+    "typo3/cms": ">=7.6.0"
+  }
+}
