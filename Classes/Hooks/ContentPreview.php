@@ -107,6 +107,9 @@ class ContentPreview implements PageLayoutViewDrawItemHookInterface
             $pageRenderer->addJsFile(
                 ExtensionManagementUtility::extRelPath('inline_page_editing') . 'Resources/Public/Javascript/Engine.js'
             );
+            $pageRenderer->addCssFile(
+                ExtensionManagementUtility::extRelPath('inline_page_editing') . 'Resources/Public/Stylesheet/Styles.css'
+            );
         }
     }
 
