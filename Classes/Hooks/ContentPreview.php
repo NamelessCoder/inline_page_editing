@@ -68,15 +68,23 @@ class ContentPreview implements PageLayoutViewDrawItemHookInterface
                         $itemContent = 'Shortcut: ' . $row['records'];
                     }
                     break;
-                default:
+                case 'text':
+                case 'textpic':
+                case 'textmedia':
+                case 'table':
+                case 'bullets':
                     if ($row['bodytext']) {
                         $itemContent = $parentObject->linkEditContent($parentObject->renderText($row['bodytext']), $row);
                     }
                     if ($row['image']) {
                         $itemContent = $parentObject->linkEditContent($parentObject->getThumbCodeUnlinked($row, 'tt_content', 'image'), $row);
                     }
+                    break;
+                default:
+                    break;
             }
         }
+        $itemContent = trim($itemContent);
         if (empty($itemContent)) {
             $itemContent = 'Click to edit';
         }
