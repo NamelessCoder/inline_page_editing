@@ -27,7 +27,7 @@ After requiring the package with Composer you must activate the extension key in
 ./typo3/cli_dispatch.phpsh extbase extension:install inline_page_editing
 ```
 
-The extension has no dependencies (except for TYPO3 CMS) and works for TYPO3 7CMS .6 LTS and upward.
+The extension has no dependencies (except for TYPO3 CMS) and works for TYPO3 CMS 7.6 LTS and upward.
 
 Configuration
 -------------
