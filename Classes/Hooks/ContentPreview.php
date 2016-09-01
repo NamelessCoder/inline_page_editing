@@ -40,7 +40,7 @@ class ContentPreview implements PageLayoutViewDrawItemHookInterface
             return;
         }
         $this->includeJavascriptInPageRendererIfNotIncluded(
-            $this->getPageLayoutController()->getModuleTemplate()->getPageRenderer()
+            GeneralUtility::makeInstance(PageRenderer::class)
         );
         if (empty($itemContent)) {
             switch ($contentType) {
@@ -99,7 +99,9 @@ class ContentPreview implements PageLayoutViewDrawItemHookInterface
      */
     public function processEditForm(EditDocumentController $controller)
     {
-        $this->includeJavascriptInPageRendererIfNotIncluded($controller->doc->getPageRenderer());
+        $this->includeJavascriptInPageRendererIfNotIncluded(
+            GeneralUtility::makeInstance(PageRenderer::class)
+        );
     }
 
     /**
