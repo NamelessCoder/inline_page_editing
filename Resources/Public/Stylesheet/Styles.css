@@ -1,17 +1,19 @@
 body.inline .module-docheader-bar-navigation,
-body.inline .module-docheader,
 body.inline .t3js-editform-delete-record,
 body.inline .help-block,
 body.inline .module-docheader-bar-column-right,
 body.inline h1 {
     display: none;
 }
+body.inline .module-docheader,
 body.inline form {
-    position: absolute;
-    top: 0;
+    position: relative;
 }
 body.inline .module-docheader-bar-column-left {
     margin-top: 1em;
+}
+.t3js-module-body {
+    padding-top: 1em !important;
 }
 iframe.inline-editable {
     border-style: none;

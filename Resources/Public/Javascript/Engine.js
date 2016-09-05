@@ -38,14 +38,11 @@
                 }
                 $('body').addClass('inline');
                 $('.module-body').removeAttr('style').removeClass('module-body');
-                $('.module-docheader-bar-column-left').appendTo($('form'));
                 $('span[data-identifier="actions-edit-undo"]').parent().remove();
                 $('span[data-identifier="actions-document-open"]').parent().click(function() {
                     window.parent.postMessage(["redirectTo", $(this).attr('href').replace('&inline=1', '')], "*");
                     return false;
                 });
-                $('button[name="_savedok"]').attr('name', '_saveandclosedok').next().remove();
-                $('input[name="closeDoc"]').val('1');
                 clearInterval(timer);
             }, 50);
 
