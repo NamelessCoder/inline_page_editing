@@ -45,7 +45,7 @@
                     return false;
                 });
                 $('button[name="_savedok"]').attr('name', '_saveandclosedok').next().remove();
-                $('input[name="closeDoc"').val('1');
+                $('input[name="closeDoc"]').val('1');
                 clearInterval(timer);
             }, 50);
 
