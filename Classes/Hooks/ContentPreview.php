@@ -24,6 +24,13 @@ class ContentPreview implements PageLayoutViewDrawItemHookInterface
     protected static $loaded = false;
 
     /**
+     * Path to the locallang file
+     *
+     * @var string
+     */
+    const LLPATH = 'LLL:EXT:inline_page_editing/Resources/Private/Language/locallang_be.xlf:';
+
+    /**
      * Preprocesses the preview rendering of a content element.
      *
      * @param PageLayoutView $parentObject Calling parent object
@@ -86,7 +93,7 @@ class ContentPreview implements PageLayoutViewDrawItemHookInterface
         }
         $itemContent = trim($itemContent);
         if (empty($itemContent)) {
-            $itemContent = 'Click to edit';
+            $itemContent = ($row['header'] ? $row['header'] . ': ' : '') . $this->getLanguageService()->sL(self::LLPATH . 'label.edit');
         }
         $drawItem = false;
         $headerContent = '';

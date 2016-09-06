@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-11-21T09:46:19Z" product-name="inline_page_editing">
+		<header/>
+		<body>
+			<trans-unit id="label.edit">
+				<source>Click to edit</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
