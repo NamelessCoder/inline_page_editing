@@ -93,7 +93,7 @@ class ContentPreview implements PageLayoutViewDrawItemHookInterface
         }
         $itemContent = trim($itemContent);
         if (empty($itemContent)) {
-            $itemContent = $this->getLanguageService()->sL(self::LLPATH . 'label.edit');
+            $itemContent = ($row['header'] ? $row['header'] . ': ' : '') . $this->getLanguageService()->sL(self::LLPATH . 'label.edit');
         }
         $drawItem = false;
         $headerContent = '';
