@@ -87,6 +87,9 @@ class ContentPreview implements PageLayoutViewDrawItemHookInterface
                         $itemContent = $parentObject->linkEditContent($parentObject->getThumbCodeUnlinked($row, 'tt_content', 'image'), $row);
                     }
                     break;
+                case 'html':
+                    $itemContent = $parentObject->linkEditContent(nl2br(htmlentities($row['bodytext'])), $row) . '<br />';
+                    break;
                 default:
                     break;
             }
