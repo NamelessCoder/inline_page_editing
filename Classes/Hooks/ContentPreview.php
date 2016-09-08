@@ -121,12 +121,8 @@ class ContentPreview implements PageLayoutViewDrawItemHookInterface
     protected function includeJavascriptInPageRendererIfNotIncluded(PageRenderer $pageRenderer)
     {
         if (!static::$loaded) {
-            $pageRenderer->addJsFile(
-                ExtensionManagementUtility::extRelPath('inline_page_editing') . 'Resources/Public/Javascript/Functions.js'
-            );
-            $pageRenderer->addJsFile(
-                ExtensionManagementUtility::extRelPath('inline_page_editing') . 'Resources/Public/Javascript/Engine.js'
-            );
+            $pageRenderer->loadJquery();
+            $pageRenderer->loadRequireJsModule('TYPO3/CMS/InlinePageEditing/InlinePageEditingEngine');
             $pageRenderer->addCssFile(
                 ExtensionManagementUtility::extRelPath('inline_page_editing') . 'Resources/Public/Stylesheet/Styles.css'
             );
