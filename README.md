@@ -76,12 +76,7 @@ Remarkably enough there are no major conflicts; rich text editing works, hooks w
 restrictions (exclude fields) are respected, record locking/unlocking happens correctly and TCA overrides
 are fully supported, as are custom fields added by extensions.
 
-There is however one known conflict due to JavaScript integrations:
-
-* The `t3editor` extension is not supported and any field using the syntax highlighted editor cannot be
-  edited inline (updates are ignored). When `t3editor` is installed this applies to the `html` content type.
-
-And some minor issues stemming from the framework integration:
+There are however some minor issues stemming from the framework integration:
 
 * TCA `displayCond` is not respected due to the way TYPO3 works when editing a list of specific columns.
   This behavior matches what happens when you click the top-of-column edit icon in the "list" module to edit
