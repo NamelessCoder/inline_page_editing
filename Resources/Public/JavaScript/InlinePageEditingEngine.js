@@ -110,7 +110,6 @@ define(['jquery'], function($) {
     if (InlinePageEditing.getUrlParameter('inline')) {
         $(InlinePageEditing.initializeInsideInlineWindow);
         setInterval(InlinePageEditing.resizeFrame, 100);
-        console.log('triggered resize');
     } else {
         $(InlinePageEditing.initializeWindowEvents);
         $(InlinePageEditing.initializeEditEnableListeners);
