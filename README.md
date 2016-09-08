@@ -69,8 +69,8 @@ registration (for legacy reasons you often see `Pi1` and so on in these names).
 If you are in doubt about which plugin signature a particular plugin uses you can insert an instance, note
 the UID of the content element and look up the `list_type` value in the database directly.
 
-Conflicts and issues
---------------------
+Known issues
+------------
 
 Remarkably enough there are no major conflicts; rich text editing works, hooks will still trigger, access
 restrictions (exclude fields) are respected, record locking/unlocking happens correctly and TCA overrides
