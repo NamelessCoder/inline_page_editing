@@ -12,6 +12,11 @@ interactive educational material. They required a usability improvement for thei
 commissioned me to execute and then kindly allowed me to contribute this back to the community in the form
 of this extension. Thanks, Systime!
 
+What does it do?
+----------------
+
+![example](Resources/Public/Images/inline-edit-example.gif "It does inline editing in the TYPO3 backend.")
+
 Installation
 ------------
 
