@@ -15,7 +15,9 @@ of this extension. Thanks, Systime!
 What does it do?
 ----------------
 
-![example](Resources/Public/Images/inline-edit-example.gif "It does inline editing in the TYPO3 backend.")
+[It does inline editing in the TYPO3 backend](Resources/Public/Images/inline-edit-example.gif)
+
+[It also presents the new content wizard as an in-page drop-down menu](Resources/Public/Images/inline-new-content-example.gif)
 
 Installation
 ------------
