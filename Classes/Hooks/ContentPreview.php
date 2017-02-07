@@ -6,8 +6,6 @@ use TYPO3\CMS\Backend\Controller\PageLayoutController;
 use TYPO3\CMS\Backend\Utility\BackendUtility;
 use TYPO3\CMS\Backend\View\PageLayoutView;
 use TYPO3\CMS\Backend\View\PageLayoutViewDrawItemHookInterface;
-use TYPO3\CMS\Core\Page\PageRenderer;
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Lang\LanguageService;
 
@@ -17,11 +15,6 @@ use TYPO3\CMS\Lang\LanguageService;
  */
 class ContentPreview implements PageLayoutViewDrawItemHookInterface
 {
-
-    /**
-     * @var boolean
-     */
-    protected static $loaded = false;
 
     /**
      * Path to the locallang file
@@ -46,9 +39,7 @@ class ContentPreview implements PageLayoutViewDrawItemHookInterface
         if (!isset($GLOBALS['TCA']['tt_content']['types'][$contentType]['inlineEditedFields'])) {
             return;
         }
-        $this->includeJavascriptInPageRendererIfNotIncluded(
-            GeneralUtility::makeInstance(PageRenderer::class)
-        );
+        (new AssetAttacher())->includeJavascriptInPageRendererIfNotIncluded();
         if (empty($itemContent)) {
             switch ($contentType) {
                 case 'header':
@@ -109,24 +100,7 @@ class ContentPreview implements PageLayoutViewDrawItemHookInterface
      */
     public function processEditForm(EditDocumentController $controller)
     {
-        $this->includeJavascriptInPageRendererIfNotIncluded(
-            GeneralUtility::makeInstance(PageRenderer::class)
-        );
-    }
-
-    /**
-     * @param PageRenderer $pageRenderer
-     * @return void
-     */
-    protected function includeJavascriptInPageRendererIfNotIncluded(PageRenderer $pageRenderer)
-    {
-        if (!static::$loaded) {
-            $pageRenderer->loadJquery();
-            $pageRenderer->loadRequireJsModule('TYPO3/CMS/InlinePageEditing/InlinePageEditingEngine');
-            $pageRenderer->addCssFile(
-                ExtensionManagementUtility::extRelPath('inline_page_editing') . 'Resources/Public/Stylesheet/Styles.css'
-            );
-        }
+        (new AssetAttacher())->includeJavascriptInPageRendererIfNotIncluded();
     }
 
     /**

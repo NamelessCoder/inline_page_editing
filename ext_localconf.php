@@ -4,6 +4,7 @@ if (!defined('TYPO3_MODE')) {
 }
 
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['tt_content_drawItem']['inline_page_editing'] = \NamelessCoder\InlinePageEditing\Hooks\ContentPreview::class;
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS'][\TYPO3\CMS\Backend\Controller\PageLayoutController::class]['initActionHook']['inline_page_editing'] = \NamelessCoder\InlinePageEditing\Hooks\AssetAttacher::class . '->includeJavascriptInPageRendererIfNotIncluded';
 
 /** @var \TYPO3\CMS\Extbase\SignalSlot\Dispatcher $signalSlotDispatcher */
 $signalSlotDispatcher = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\SignalSlot\Dispatcher::class);
