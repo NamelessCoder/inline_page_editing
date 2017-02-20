@@ -130,7 +130,7 @@ define(['jquery'], function($) {
             [
                 "setFrameHeight",
                 InlinePageEditing.getUrlParameter('element'),
-                $(window.document).find('html').height()
+                $('div.module-docheader').height() + $('div.t3js-module-body').height() + 25
             ],
             "*"
         );
