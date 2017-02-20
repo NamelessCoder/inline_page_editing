@@ -85,9 +85,6 @@ define(['jquery'], function($) {
                             link.prepend(icon).addClass('dropdown-item pull-left');
                             subIndex++;
                             html += link.wrap('<div>').parent().html();
-                            //$(html).prepend(link);
-
-
                         });
                         html += '</div>';
                         if (index - 1 % 2 == 0 && index > 0) {
