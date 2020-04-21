@@ -25,8 +25,11 @@ class AssetAttacher
             $pageRenderer = GeneralUtility::makeInstance(PageRenderer::class);
             $pageRenderer->loadJquery();
             $pageRenderer->loadRequireJsModule('TYPO3/CMS/InlinePageEditing/InlinePageEditingEngine');
+            if (version_compare(ExtensionManagementUtility::getExtensionVersion('core'), '8.7', '<')) {
+                $pageRenderer->loadRequireJsModule('TYPO3/CMS/InlinePageEditing/InlinePageEditingDropDown');
+            }
             $pageRenderer->addCssFile(
-                ExtensionManagementUtility::extRelPath('inline_page_editing') . 'Resources/Public/Stylesheet/Styles.css'
+                GeneralUtility::getFileAbsFileName('EXT:inline_page_editing/Resources/Public/Stylesheet/Styles.css')
             );
             static::$loaded = true;
         }
