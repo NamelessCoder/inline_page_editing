@@ -1,7 +1,7 @@
 <?php
 $EM_CONF[$_EXTKEY] = [
   'title' => 'Page module inline editing',
-  'description' => 'Enables editing of content elements in the backend module without openening the content editing form (displays configurable form fields in preview, activates on click)',
+  'description' => 'Enables editing of content elements in the backend module without opening the content editing form (displays configurable form fields in preview, activates on click)',
   'category' => 'misc',
   'author' => 'Claus Due',
   'author_email' => 'claus@namelesscoder.net',
@@ -21,8 +21,8 @@ $EM_CONF[$_EXTKEY] = [
   'version' => '1.2.0',
   'constraints' => [
     'depends' => [
-      'php' => '5.6.0-7.1.99',
-      'typo3' => '7.6.0-8.7.99',
+      'php' => '5.6.0-7.4.99',
+      'typo3' => '7.6.0-10.4.99',
     ],
     'conflicts' => [],
     'suggests' => [],
