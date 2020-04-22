@@ -1,3 +1,6 @@
+body.inline {
+    height: auto !important;
+}
 body.inline .module-docheader-bar-navigation,
 body.inline .t3js-editform-delete-record,
 body.inline .help-block,
