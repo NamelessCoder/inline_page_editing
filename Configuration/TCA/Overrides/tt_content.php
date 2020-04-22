@@ -1,8 +1,9 @@
 <?php
 $GLOBALS['TCA']['tt_content']['types']['header']['inlineEditedFields'] = 'header';
-$GLOBALS['TCA']['tt_content']['types']['textmedia']['inlineEditedFields'] = 'header,bodytext';
-$GLOBALS['TCA']['tt_content']['types']['text']['inlineEditedFields'] = $GLOBALS['TCA']['tt_content']['types']['textmedia']['inlineEditedFields'];
+$GLOBALS['TCA']['tt_content']['types']['text']['inlineEditedFields'] = 'header,bodytext';
+$GLOBALS['TCA']['tt_content']['types']['textmedia']['inlineEditedFields'] = 'header,bodytext,image';
 $GLOBALS['TCA']['tt_content']['types']['textpic']['inlineEditedFields'] = $GLOBALS['TCA']['tt_content']['types']['textmedia']['inlineEditedFields'];
+$GLOBALS['TCA']['tt_content']['types']['image']['inlineEditedFields'] = $GLOBALS['TCA']['tt_content']['types']['textmedia']['inlineEditedFields'];
 $GLOBALS['TCA']['tt_content']['types']['bullets']['inlineEditedFields'] = 'header,bullets_type,bodytext';
 $GLOBALS['TCA']['tt_content']['types']['table']['inlineEditedFields'] = 'header,table_delimiter,table_caption,bodytext,table_footer';
 $GLOBALS['TCA']['tt_content']['types']['uploads']['inlineEditedFields'] = 'header,media';
