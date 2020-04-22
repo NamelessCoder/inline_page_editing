@@ -118,7 +118,7 @@ class ContentPreview implements PageLayoutViewDrawItemHookInterface
      */
     protected function renderClickEnableWrapper($itemContent, array $row)
     {
-        $elementId = 'e' . md5(time() * microtime(true));
+        $elementId = 'e' . $row['uid'];
         $uri = rtrim(GeneralUtility::getIndpEnv('REQUEST_URI'), '&');
         $urlParameters = [
             'inline' => 1,
@@ -133,8 +133,7 @@ class ContentPreview implements PageLayoutViewDrawItemHookInterface
         $editingUrl = BackendUtility::getModuleUrl('record_edit', $urlParameters);
         return sprintf(
             '<div class="inline-edit-click-enable" data-toggle="tooltip" title="Click to edit" data-placement="top"
-                data-configuration="%s" data-edit-url="%s" data-element-id="%s">%s</div>',
-            '',
+                data-edit-url="%s" data-element-id="%s">%s</div>',
             $editingUrl,
             $elementId,
             $itemContent

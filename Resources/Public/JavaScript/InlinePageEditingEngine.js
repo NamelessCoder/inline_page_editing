@@ -89,16 +89,21 @@ define(['jquery'], function($) {
             } else if (e.data[0] == 'redirectTo') {
                 window.location.href = e.data[1];
             } else if (e.data[0] == 'closeFrame') {
-                $('#' + e.data[1]).parent().removeClass('open').html(e.data[2]).click(InlinePageEditing.clickEditAction);
+                var element = $('#' + e.data[1]).parent();
+                element.removeClass('open');
+                element.html(e.data[2]).click(InlinePageEditing.clickEditAction);
             }
         }, false);
     };
 
     InlinePageEditing.dispatchWindowCloseEvent = function() {
         // End-of-edit reached; extract resulting HTML and message to parent window, dispatch close action.
-        var html = $('#element-tt_content-' + InlinePageEditing.getUrlParameter('contentId') + ' .exampleContent').html();
-        if ($(html).find('.inline-edit-click-enable').length > 0) {
-            html = html.find('.inline-edit-click-enable').html();
+        var container = $('#element-tt_content-' + InlinePageEditing.getUrlParameter('contentId') + ' .exampleContent');
+        var html;
+        if (container.find('.inline-edit-click-enable').length > 0) {
+            html = container.find('.inline-edit-click-enable').html();
+        } else {
+            html = container.html();
         };
         window.parent.postMessage(["closeFrame", InlinePageEditing.getUrlParameter('element'), html], "*");
     };
